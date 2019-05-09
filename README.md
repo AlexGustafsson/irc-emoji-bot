@@ -46,6 +46,8 @@ If you have a secret (such as `I use Vim (asic)`) which you would like to share,
 
 Source: http://asciimoji.com
 
+_Note: there may be some rendering issues in the table below. See `src/emojis.csv` for exact values._
+
 | command | emoji |
 |---|---|
 | (acid) | ⊂(◉‿◉)つ |
