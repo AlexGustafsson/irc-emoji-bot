@@ -4,17 +4,22 @@ import os
 import csv
 import re
 import random
+import sys
 
 from connector import IRC
 
 dirname = os.path.dirname(__file__)
 
-server = ''
-port = 6697
-channel = '#random'
-nick = 'emoji-bot'
-user = 'emoji-bot'
-gecos = 'Emoji Bot v0.1 (github.com/AlexGustafsson/irc-emoji-bot)'
+server = os.getenv('SERVER', None)
+port = os.getenv('PORT', 6697)
+channel = os.getenv('CHANNEL', '#random')
+nick = os.getenv('NICK', 'emoji-bot')
+user = os.getenv('USER', 'emoji-bot')
+gecos = os.getenv('GECOS', 'Emoji Bot v0.1 (github.com/AlexGustafsson/irc-emoji-bot)')
+
+if server == None:
+    print('Cannot start the bot without a given server')
+    sys.exit()
 
 emojis = None
 with open(os.path.join(dirname, './emojis.csv'), 'r') as file:
