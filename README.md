@@ -14,7 +14,7 @@ cd irc-emoji-bot
 # Build the image
 ./build-docker.sh
 # Start the image
-docker run -e SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
+docker run -d -e SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
 ```
 
 ### Documentation
@@ -22,7 +22,7 @@ docker run -e SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
 #### Running with Docker
 
 ```Bash
-docker run \
+docker run -d \
 -e SERVER='irc.example.org' \
 -e PORT='6697' \
 -e CHANNEL='#random' \
