@@ -14,7 +14,7 @@ cd irc-emoji-bot
 # Build the image
 ./build-docker.sh
 # Start the image
-docker run -d -e SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
+docker run -d -e IRC_SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
 ```
 
 ### Documentation
@@ -23,12 +23,12 @@ docker run -d -e SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
 
 ```Bash
 docker run -d \
--e SERVER='irc.example.org' \
--e PORT='6697' \
--e CHANNEL='#random' \
--e NICK='emoji-bot' \
--e USER='emoji-bot' \
--e GECOS='Emoji Bot v0.1 (github.com/AlexGustafsson/irc-emoji-bot)' \
+-e IRC_SERVER='irc.example.org' \
+-e IRC_PORT='6697' \
+-e IRC_CHANNEL='#random' \
+-e IRC_NICK='emoji-bot' \
+-e IRC_USER='emoji-bot' \
+-e IRC_GECOS='Emoji Bot v0.1 (github.com/AlexGustafsson/irc-emoji-bot)' \
 axgn/irc-emoji-bot
 ```
 
@@ -36,7 +36,11 @@ axgn/irc-emoji-bot
 
 To see help messages send `emoji-bot: help` in the channel where the bot lives.
 
-By sending a message such as `I just saw my friend use Vim (rage)`, the bot will lookup `(rage)` and send an appropriate emoji.
+To send a message containing an emoji and text, use the format `emoji-bot: (bond) freeze, sucka!!!` which will send `┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ freeze, sucka!!!`.
+
+By sending a message such as `I just saw my friend use Vim (rage)`, the bot will send `t(ಠ益ಠt)`.
+
+If you have a secret (such as `I use Vim (asic)`) which you would like to share, you can send it in a direct message to the bot. It will still send the response to the specified channel without any mentioning of the sender.
 
 #### Available emojis
 

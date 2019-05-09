@@ -13,7 +13,6 @@ class IRC:
         self.messages = queue.Queue()
 
     def connect(self, server, port, user, nick, gecos=''):
-        print('IRC: connecting to server')
         ssl_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock = ssl.wrap_socket(ssl_sock)
         self.sock.connect((server, port))
