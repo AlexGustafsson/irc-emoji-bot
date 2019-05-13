@@ -15,7 +15,7 @@ port = os.getenv('IRC_PORT', 6697)
 channel = os.getenv('IRC_CHANNEL', '#random')
 nick = os.getenv('IRC_NICK', 'emoji-bot')
 user = os.getenv('IRC_USER', 'emoji-bot')
-gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.2 (github.com/AlexGustafsson/irc-emoji-bot)')
+gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.2.1 (github.com/AlexGustafsson/irc-emoji-bot)')
 
 if server == None:
     print('Cannot start the bot without a given server')
@@ -55,7 +55,7 @@ def handle_message(message):
         elif re.match('^{0}: (\([a-z]+\))'.format(nick), body) is not None:
             handle_emoji_with_text(body)
         else:
-            possible_emojis = re.findall('(\([a-z]+\))', body)
+            possible_emojis = re.findall('(\([a-z0-9]+\))', body)
             handle_emoji(possible_emojis)
 
 
