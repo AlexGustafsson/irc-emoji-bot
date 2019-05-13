@@ -73,6 +73,7 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (blubby) | ( 0 _ 0 ) |
 | (blush) | (˵ ͡° ͜ʖ ͡°˵) |
 | (bond) | ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ |
+| (007) | ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ |
 | (boobs) | ( . Y . ) |
 | (bored) | (-_-) |
 | (bribe) | ( •͡˘ _•͡˘)ノð |
@@ -99,10 +100,17 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (c) | © |
 | (creep) | ԅ(≖‿≖ԅ) |
 | (creepcute) | ƪ(ړײ)‎ƪ​​ |
+| (crim3s) | ( ✜︵✜ ) |
 | (cross) | † |
 | (cry) | (╥﹏╥) |
 | (crywave) | ( ╥﹏╥) ノシ |
 | (cute) | (｡◕‿‿◕｡) |
+| (d1) | ⚀ |
+| (d2) | ⚁ |
+| (d3) | ⚂ |
+| (d4) | ⚃ |
+| (d5) | ⚄ |
+| (d6) | ⚅ |
 | (dab) | ヽ( •_)ᕗ |
 | (damnyou) | (ᕗ ͠° ਊ ͠° )ᕗ |
 | (dance) | ᕕ(⌐■_■)ᕗ ♪♬ |
@@ -117,12 +125,16 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (dog) | (◕ᴥ◕ʋ) |
 | (dollar) | $ |
 | (dollarbill) | [̲̅$̲̅(̲̅ιο̲̅̅)̲̅$̲̅] |
+| ($) | [̲̅$̲̅(̲̅ιο̲̅̅)̲̅$̲̅] |
 | (dong) | (̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄ |
 | (donger) | ヽ༼ຈل͜ຈ༽ﾉ |
 | (dontcare) | (- ʖ̯-) |
 | (idc) | (- ʖ̯-) |
+| (do not want) | ヽ(｀Д´)ﾉ |
 | (dontwant) | ヽ(｀Д´)ﾉ |
 | (dope) | <(^_^)> |
+| (<<) | « |
+| (>>) | » |
 | (doubleflat) | 𝄫 |
 | (doublesharp) | 𝄪 |
 | (doubletableflip) | ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻ |
@@ -134,9 +146,12 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (ebola) | ᴇʙᴏʟᴀ |
 | (eeriemob) | (-(-_-(-_(-_(-_-)_-)-_-)_-)_-)-) |
 | (ellipsis) | … |
+| (...) | … |
 | (emdash) | – |
+| (--) | – |
 | (emptystar) | ☆ |
 | (emptytriangle) | △ |
+| (t2) | △ |
 | (endure) | (҂◡_◡) ᕤ |
 | (envelope) | ✉︎ |
 | (letter) | ✉︎ |
@@ -153,7 +168,9 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (fight) | (ง •̀_•́)ง |
 | (finn) | | (• ◡•)| |
 | (fish) | "<""(((<3" |
+| (5) | 卌 |
 | (five) | 卌 |
+| (5/8) | ⅝ |
 | (flat) | ♭ |
 | (bemolle) | ♭ |
 | (flexing) | ᕙ(`▽´)ᕗ |
@@ -230,6 +247,7 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (lambda) | λ |
 | (lazy) | _(:3」∠)_ |
 | (left) | ← |
+| (<-) | ← |
 | (lenny) | ( ͡° ͜ʖ ͡°) |
 | (lennybill) | [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] |
 | (lennyfight) | (ง ͠° ͟ʖ ͡°)ง |
@@ -277,6 +295,10 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (ohshit) | ( º﹃º ) |
 | (omega) | Ω |
 | (omg) | ◕_◕ |
+| (1/8) | ⅛ |
+| (1/4) | ¼ |
+| (1/2) | ½ |
+| (1/3) | ⅓ |
 | (opt) | ⌥ |
 | (option) | ⌥ |
 | (orly) | (눈_눈) |
@@ -302,6 +324,7 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (really) | ò_ô |
 | (r) | ® |
 | (right) | → |
+| (->) | → |
 | (riot) | ୧༼ಠ益ಠ༽୨ |
 | (rolldice) | ⚃ |
 | (rolleyes) | (◔_◔) |
@@ -310,6 +333,7 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (sad) | ε(´סּ︵סּ`)з |
 | (saddonger) | ヽ༼ຈʖ̯ຈ༽ﾉ |
 | (sadlenny) | ( ͡° ʖ̯ ͡°) |
+| (7/8) | ⅞ |
 | (sharp) | ♯ |
 | (diesis) | ♯ |
 | (shout) | ╚(•⌂•)╝ |
@@ -346,12 +370,14 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (thankyou) | \(^-^)/ |
 | (ty) | \(^-^)/ |
 | (this) | ( ͡° ͜ʖ ͡°)_/¯ |
+| (3/8) | ⅜ |
 | (tiefighter) | |=-(¤)-=| |
 | (tired) | (=____=) |
 | (toogood) | ᕦ(òᴥó)ᕥ |
 | (tm) | ™ |
 | (triangle) | ▲ |
 | (t) | ▲ |
+| (2/3) | ⅔ |
 | (unflip) | ┬──┬ ノ(ò_óノ) |
 | (up) | ↑ |
 | (victory) | (๑•̀ㅂ•́)ง✧ |
@@ -370,12 +396,26 @@ _Note: there may be some rendering issues in the table below. See `src/emojis.cs
 | (yinyang) | ☯ |
 | (yolo) | Yᵒᵘ Oᶰˡʸ Lᶤᵛᵉ Oᶰᶜᵉ |
 | (youkids) | ლ༼>╭ ͟ʖ╮<༽ლ |
+| (y u no) | (屮ﾟДﾟ)屮 Y U NO |
 | (yuno) | (屮ﾟДﾟ)屮 Y U NO |
 | (zen) | ⊹╰(⌣ʟ⌣)╯⊹ |
 | (meditation) | ⊹╰(⌣ʟ⌣)╯⊹ |
 | (omm) | ⊹╰(⌣ʟ⌣)╯⊹ |
 | (zoidberg) | "(V) (°,,,,°) (V)" |
 | (zombie) | [¬º-°]¬ |
+| (flip) | (ノ ゜Д゜)ノ ︵ |
+| (yum) | ლ(´ڡ`ლ) |
+| (yummyd) | ╰⋃╯ლ(´ڡ`ლ) |
+| (cutd) | ✂╰⋃╯ |
+| (flag) | 尸 |
+| (surrender) | (oT-T)尸 |
+| (monster2) | ٩(̾●̮̮̃̾•̃̾)۶ |
+| (monster3) | ٩(- ̮̮̃-̃)۶ |
+| (fuckall) | ╭∩╮(-_-)╭∩╮ |
+| (cat2) | 龴ↀ◡ↀ龴 |
+| (happy2) |  ۜ\(סּںסּَ` )/ۜ |
+| (ded) | (✖╭╮✖) |
+| (hundrakrona) | [̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅] |
 
 ### Contributing
 
