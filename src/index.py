@@ -15,7 +15,7 @@ port = os.getenv('IRC_PORT', 6697)
 channel = os.getenv('IRC_CHANNEL', '#random')
 nick = os.getenv('IRC_NICK', 'emoji-bot')
 user = os.getenv('IRC_USER', 'emoji-bot')
-gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.2.1 (github.com/AlexGustafsson/irc-emoji-bot)')
+gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.3.0 (github.com/AlexGustafsson/irc-emoji-bot)')
 
 if server == None:
     print('Cannot start the bot without a given server')
@@ -40,19 +40,27 @@ def handle_help():
     irc.send(channel, '{0}: help -> this help text'.format(nick))
 
 def handle_emoji_with_text(body):
-    match = re.match('^{0}: (\([a-z]+\)) (.*)$'.format(nick), body)
-    if (match):
-        possible_emoji = match.group(1)
-        text = match.group(2)
-        if (possible_emoji in emojis):
-            irc.send(channel, '{0} {1}'.format(emojis[possible_emoji], text))
+    # Remove the nick prompt and trim whiteline
+    body = body[len(nick) + 1:].strip()
+    emoji_regex = re.compile("(\([a-z0-9]+\))")
+    parts = emoji_regex.split(body)
+    print(parts)
+
+    result = ''
+    for part in parts:
+        print(part)
+        result += emojis[part] if part in emojis else part
+
+    print(result)
+    irc.send(channel, result)
 
 def handle_message(message):
     sender, type, target, body = message
     if type == 'PRIVMSG':
+        print(body)
         if body == '{0}: help'.format(nick):
             handle_help()
-        elif re.match('^{0}: (\([a-z]+\))'.format(nick), body) is not None:
+        elif re.match('^{0}:.*\([a-z0-9]+\).*'.format(nick), body) is not None:
             handle_emoji_with_text(body)
         else:
             possible_emojis = re.findall('(\([a-z0-9]+\))', body)
