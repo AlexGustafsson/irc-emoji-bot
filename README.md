@@ -32,6 +32,10 @@ docker run -d \
 axgn/irc-emoji-bot
 ```
 
+The image is stateless and based on Alpine and is roughly 90MB in size. While running, the container usually uses 0% of the CPU and roughly 7MB of RAM. During load id uses about 0.20% CPU on a single core and an unchanged amount of RAM.
+
+To prevent any unforseen events, one can therefore limit the container's resources by using the flags `--cpus=0.5` (based on four CPUs) and `--memory=10MB` which should both leave some head room.
+
 #### Invoking via IRC
 
 To see help messages send `emoji-bot: help` in the channel where the bot lives.
