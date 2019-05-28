@@ -11,7 +11,7 @@ from connector import IRC
 dirname = os.path.dirname(__file__)
 
 server = os.getenv('IRC_SERVER', None)
-port = os.getenv('IRC_PORT', 6697)
+port = int(os.getenv('IRC_PORT', '6697'))
 channel = os.getenv('IRC_CHANNEL', '#random')
 nick = os.getenv('IRC_NICK', 'emoji-bot')
 user = os.getenv('IRC_USER', 'emoji-bot')
