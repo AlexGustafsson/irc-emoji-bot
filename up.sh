@@ -11,6 +11,6 @@ docker run \
   --name irc-emoji-bot \
   --detach \
   --restart always \
-  --cpus=0.5 \
+  --cpus=0.05 \
   --memory=10MB \
   axgn/irc-emoji-bot
