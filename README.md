@@ -28,7 +28,7 @@ docker run -d \
 -e IRC_CHANNEL='#random' \
 -e IRC_NICK='emoji-bot' \
 -e IRC_USER='emoji-bot' \
--e IRC_GECOS='Emoji Bot v0.1 (github.com/AlexGustafsson/irc-emoji-bot)' \
+-e IRC_GECOS='Emoji Bot v0.3.0 (github.com/AlexGustafsson/irc-emoji-bot)' \
 axgn/irc-emoji-bot
 ```
 
