@@ -5,6 +5,7 @@ import time
 import queue
 import sys
 
+
 class IRC:
     def __init__(self):
         self.sock = None
@@ -13,9 +14,10 @@ class IRC:
         self.messages = queue.Queue()
 
     def connect(self, server, port, user, nick, gecos=''):
-        ssl_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock = ssl.wrap_socket(ssl_sock)
-        self.sock.connect((server, port))
+        ssl_sock = socket.create_connection((server, port))
+        self.sslContext = ssl.create_default_context()
+        self.sock = self.sslContext.wrap_socket(ssl_sock, server_hostname=server)
+        print(self.sock.getpeercert())
         self.sock.send(bytes('USER {0} {0} {0} :{1}\r\n'.format(user, gecos), 'UTF-8'))
         self.sock.send(bytes('NICK {0}\r\n'.format(nick), 'UTF-8'))
 
@@ -49,11 +51,6 @@ class IRC:
             message = self.read()
 
             sys.stdout.flush()
-
-            #:alex!~alex@nas.home PRIVMSG #emoji-bot-test :Hello world!
-            #:irc.blesstherains.africa 372 emoji-bot :-
-            #:emoji-bot!~emoji-bot@nas.home QUIT :Ping timeout: 2m30s
-            #PING emoji-bot
 
             if message.find('PING') == 0:
                 key = message.split(' ')[1]

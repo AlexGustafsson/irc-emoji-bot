@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import time
 import os
 import csv
 import re
 import random
 import sys
+import ssl
 
 from connector import IRC
 
@@ -17,19 +17,21 @@ nick = os.getenv('IRC_NICK', 'emoji-bot')
 user = os.getenv('IRC_USER', 'emoji-bot')
 gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.3.0 (github.com/AlexGustafsson/irc-emoji-bot)')
 
-if server == None:
+if server is None:
     print('Cannot start the bot without a given server')
     sys.exit()
 
 emojis = None
 with open(os.path.join(dirname, './emojis.csv'), 'r') as file:
     reader = csv.reader(file)
-    emojis = {row[0]:row[1] for row in reader if row and row[0]}
+    emojis = {row[0]: row[1] for row in reader if row and row[0]}
+
 
 def handle_emoji(possible_emojis):
     for possible_emoji in possible_emojis:
         if possible_emoji in emojis:
             irc.send(channel, emojis[possible_emoji])
+
 
 def handle_help():
     command, emoji = random.sample(emojis.items(), 1)[0]
@@ -39,20 +41,19 @@ def handle_help():
     irc.send(channel, '{0}: (bond) freeze, sucka!!! -> ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿ freeze, sucka!!!'.format(nick))
     irc.send(channel, '{0}: help -> this help text'.format(nick))
 
+
 def handle_emoji_with_text(body):
     # Remove the nick prompt and trim whiteline
     body = body[len(nick) + 1:].strip()
-    emoji_regex = re.compile("(\([a-z0-9]+\))")
+    emoji_regex = re.compile("(\\([a-z0-9]+\\))")
     parts = emoji_regex.split(body)
-    print(parts)
 
     result = ''
     for part in parts:
-        print(part)
         result += emojis[part] if part in emojis else part
 
-    print(result)
     irc.send(channel, result)
+
 
 def handle_message(message):
     sender, type, target, body = message
@@ -60,10 +61,10 @@ def handle_message(message):
         print(body)
         if body == '{0}: help'.format(nick):
             handle_help()
-        elif re.match('^{0}:.*\([a-z0-9]+\).*'.format(nick), body) is not None:
+        elif re.match('^{0}:.*\\([a-z0-9]+\\).*'.format(nick), body) is not None:
             handle_emoji_with_text(body)
         else:
-            possible_emojis = re.findall('(\([a-z0-9]+\))', body)
+            possible_emojis = re.findall('(\\([a-z0-9]+\\))', body)
             handle_emoji(possible_emojis)
 
 
