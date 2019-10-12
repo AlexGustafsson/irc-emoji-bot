@@ -7,7 +7,7 @@ docker run \
   --env IRC_CHANNEL='#random' \
   --env IRC_NICK='emoji-bot' \
   --env IRC_USER='emoji-bot' \
-  --env IRC_GECOS='Emoji Bot v0.3.0 (github.com/AlexGustafsson/irc-emoji-bot)' \
+  --env IRC_GECOS='Emoji Bot v0.3.1 (github.com/AlexGustafsson/irc-emoji-bot)' \
   --name irc-emoji-bot \
   --detach \
   --restart always \
