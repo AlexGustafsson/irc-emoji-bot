@@ -15,7 +15,7 @@ port = int(os.getenv('IRC_PORT', '6697'))
 channel = os.getenv('IRC_CHANNEL', '#random')
 nick = os.getenv('IRC_NICK', 'emoji-bot')
 user = os.getenv('IRC_USER', 'emoji-bot')
-gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.3.1 (github.com/AlexGustafsson/irc-emoji-bot)')
+gecos = os.getenv('IRC_GECOS', 'Emoji Bot v0.3.2 (github.com/AlexGustafsson/irc-emoji-bot)')
 
 if server is None:
     print('Cannot start the bot without a given server')
