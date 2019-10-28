@@ -12,12 +12,21 @@ class IRC:
         self.thread = None
         self.shouldRun = None
         self.messages = queue.Queue()
+        self.tries = 0
 
     def connect(self, server, port, user, nick, gecos=''):
-        ssl_sock = socket.create_connection((server, port))
+        try:
+            ssl_sock = socket.create_connection((server, port))
+        except Exception as exception:
+            print("Connector: Got exception: {}".format(exception))
+            self.tries = self.tries + 1
+            print("Connector: Waiting {} seconds".format(self.tries ** 2))
+            time.sleep(self.tries ** 2)
+            self.connect(server, port, user, nick, gecos)
+        self.tries = 0
         self.sslContext = ssl.create_default_context()
         self.sock = self.sslContext.wrap_socket(ssl_sock, server_hostname=server)
-        print(self.sock.getpeercert())
+
         self.sock.send(bytes('USER {0} {0} {0} :{1}\r\n'.format(user, gecos), 'UTF-8'))
         self.sock.send(bytes('NICK {0}\r\n'.format(nick), 'UTF-8'))
 
@@ -41,7 +50,13 @@ class IRC:
         self.sock.send(bytes('PRIVMSG {0} :{1}\r\n'.format(channel, message), 'UTF-8'))
 
     def read(self):
-        message = self.sock.recv(1024).decode('UTF-8').strip('\r\n')
+        bytes = self.sock.recv(4096)
+        if bytes == '':
+            print('Connector: Disconnected, reconnecting')
+            self.disconnect()
+            self.connect()
+
+        message = bytes.decode('UTF-8').strip('\r\n')
 
         return message
 
