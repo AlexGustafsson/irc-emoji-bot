@@ -6,30 +6,31 @@
 
 ##### Quickstart
 
-```Bash
+```shell
 # Clone the repository
 git clone https://github.com/AlexGustafsson/irc-emoji-bot
 # Enter the directory
 cd irc-emoji-bot
+# Run
+python3 -m bot.main --server irc.example.com
+```
+
+You can also run the container using Docker, like so:
+
+```shell
 # Build the image
-./build-docker.sh
-# Start the image
-docker run -d -e IRC_SERVER='irc.example.org' --restart always axgn/irc-emoji-bot
+docker build -t axgn/irc-emoji-bot:latest .
+
+# Run
+docker run axgn/irc-emoji-bot --server irc.example.com --channel "#random"
 ```
 
 ### Documentation
 
 #### Running with Docker
 
-```Bash
-docker run -d \
--e IRC_SERVER='irc.example.org' \
--e IRC_PORT='6697' \
--e IRC_CHANNEL='#random' \
--e IRC_NICK='emoji-bot' \
--e IRC_USER='emoji-bot' \
--e IRC_GECOS='Emoji Bot v0.3.2 (github.com/AlexGustafsson/irc-emoji-bot)' \
-axgn/irc-emoji-bot
+```shell
+docker run axgn/irc-emoji-bot --server irc.example.com --channel "#random"
 ```
 
 The image is stateless and based on Alpine and is roughly 90MB in size. While running, the container usually uses 0% of the CPU and roughly 7MB of RAM. During load it uses about 0.20% CPU and while starting about 0.4% on a single core and an unchanged amount of RAM.
@@ -44,13 +45,11 @@ To send a message containing an emoji and text, use the format `emoji-bot: (bond
 
 By sending a message such as `I just saw my friend use Vim (rage)`, the bot will send `t(ಠ益ಠt)`.
 
-If you have a secret (such as `I use Vim (asic)`) which you would like to share, you can send it in a direct message to the bot. It will still send the response to the specified channel without any mentioning of the sender.
-
 #### Available emojis
 
 Source: http://asciimoji.com
 
-_Note: there may be some rendering issues in the table below. See `src/emojis.csv` for exact values._
+_Note: there may be some rendering issues in the table below. See `bot/emojis.csv` for exact values._
 
 | command | emoji |
 |---|---|

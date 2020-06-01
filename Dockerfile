@@ -1,6 +1,11 @@
 FROM python:3-alpine
 
-RUN mkdir -p /var/www
-COPY src /var/www/
+RUN addgroup -g 6697 -S irc-bot && \
+    adduser -u 6697 -S irc-bot -G irc-bot
 
-CMD ["python", "/var/www/index.py"]
+USER irc-bot
+
+WORKDIR /irc-bot
+COPY . .
+
+ENTRYPOINT ["python3", "-m", "bot.main"]
