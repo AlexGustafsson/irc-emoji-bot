@@ -31,7 +31,7 @@ def main() -> None:
     # Add optional parameters for authentication etc.
     parser.add_argument("-u", "--user", default="emoji-bot", help="Username to use when connecting to the IRC server")
     parser.add_argument("-n", "--nick", default="emoji-bot", help="Nick to use when connecting to the IRC server")
-    parser.add_argument("-g", "--gecos", default="Emoji Bot v1.0.2 (github.com/AlexGustafsson/irc-emoji-bot)", help="Gecos to use when connecting to the IRC server")
+    parser.add_argument("-g", "--gecos", default="Emoji Bot v1.0.3 (github.com/AlexGustafsson/irc-emoji-bot)", help="Gecos to use when connecting to the IRC server")
     parser.add_argument("-c", "--channel", required=True, action='append', help="Channel to join. May be used more than once")
 
     # Parse the arguments
